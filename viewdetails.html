@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- css cdn  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Document</title>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- bootstrap js cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a class="nav-brand text-decoration-none fw-bolder text-light" href="/landingpage.html"><img src="/image/swcb logo.png" alt="" width="40px" height="30px">South West Community Bank</a>
+            <!-- navbar toggle button -->
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center nav-pills ">
+                    <li class="nav-item me-2 fw-bold"><a href="#" class="nav-link text-decoration-none p-2">Customer Support</a></li>
+                    <li class="nav-item me-2 fw-bold"><a href="#" class="nav-link text-decoration-none p-2">Contact</a></li>
+                    <li class="nav-item me-2 fw-bold"><a href="/loginpage.html" class="nav-link text-decoration-none p-2">Logout</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 bg-dark pt-2 d-none d-md-block">
+                        <a href="/dashboard.html" type="button" class="btn btn-dark  py-3 mb-2 d-flex justify-content-center">
+                            <div class="container  align-items-center">
+                                <span class="text-white"><ion-icon name="logo-stackoverflow"></ion-icon></span>
+                                <span class="ms-3 text-light">Overview</span>
+                            </div>
+                        </a>
+                        <a href="/transferpage.html" type="button" class="btn btn-dark w-100 py-3 mb-2 d-flex justify-content-center">
+                            <div class="container align-items-center">
+                                <span class="text-white"><ion-icon name="send-outline"></ion-icon></span>
+                                <span class="ms-3 text-light">Transfer</span>
+                            </div>
+                        </a>
+                        <a href="/transactions.html" type="button" class="btn btn-dark w-100 py-3 mb-2 d-flex justify-content-center">
+                            <div class="container">
+                                <span class="text-white ms-4"><ion-icon name="clipboard-outline"></ion-icon></span>
+                                <span class="ms-3 text-light">Transactions</span>
+                            </div>
+                        </a>
+                        <a href="" type="button" class="btn btn-dark w-100 py-3 mb-2 d-flex justify-content-center">
+                            <div class="container align-items-center">
+                                <span class="text-white"><ion-icon name="cash-outline"></ion-icon></span>
+                                <span class="ms-3 text-light">Pay Bills</span>
+                            </div>
+                        </a>
+                        <a href="" type="button" class="btn btn-dark w-100 py-3 mb-2 d-flex justify-content-center">
+                            <div class="container  align-items-center">
+                                <span class="text-white"><ion-icon name="settings-outline"></ion-icon></span>
+                                <span class="ms-3 text-light">Settings</span>
+                            </div>
+                        </a>
+                        
+                    </div>
+                    <div class="col-md-9 " style="height: 90vh;" id="disp">
+                        <div class="container align-items-center mt-5">
+                            <div class="row justify-content-center align-items-center">
+                                <form role="form" onsubmit="sub(event)">
+                                    <div class=" form-group">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 mb-3">
+                                            <input type="text" class="form-control w-100" placeholder="Firstname" id="userFname" disabled>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <input type="text" class="form-control w-100" placeholder="lastname" id="userLname" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" form-group">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 mb-3">
+                                            <input type="" class="form-control w-100" placeholder="Email" id="userEmail" disabled>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <input type="password" class="form-control w-100" placeholder="Password" id="userPassword" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" form-group">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 mb-3">
+                                            <input type="number" class="form-control w-100" placeholder="Phone no" id="userPhone" disabled>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <input type="date"  class="w-100 h-100"  id="userDob" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-center">Address</p>
+                                </div>
+                                <div class=" form-group">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 mb-3">
+                                            <input type="text" class="form-control w-100" placeholder="Street" id="userStreet" disabled>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <input type="text" class="form-control w-100" placeholder="City" id="userCity" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" form-group">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 mb-3">
+                                            <input type="text" class="form-control w-100" placeholder="State" id="userState" disabled>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <input type="text" class="form-control w-100" placeholder="Country" id="userCountry" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="row justify-content-center">
+                                    <div class="col-8 mt-3">
+                                        <button type="submit" class="btn btn-primary w-100 mb-3">submit</button>
+                                    </div>
+                                </div> -->
+                                </form> 
+                                <h1 class="display-6 mt-3 text-center">Update Email or PassWord</h1>
+                                <button class="btn btn-info w-25 mb-5 me-3"><a href="/updatemail.html" class="text-decoration-none text-dark">Change Email</a> </button><button class="btn btn-danger w-25 mb-5"><a href="/updatepassword.html" class="text-decoration-none text-dark">Change Password</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section>
+            <div class="container-fluid text-light bg-dark" id="footer">
+                <div class="container pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <p class="text-center fw-bolder">COMPANY</p>
+                            <ul class="nav-menu list-unstyled text-center">
+                                <li class="nav-item"><a href="" class="nav-link text-light">About Us</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-light">Our Services</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-light">Customer Support</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-light">Live Chat</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                        <p class="text-center fw-bolder">CONTACT</p>
+                        <ul class="nav-menu list-unstyled text-center">
+                            <li class="nav-item"><a href="" class="nav-link text-light">contact :+1(234) 903 2561</a></li>
+                            <li class="nav-item"><a href="" class="nav-link text-light">Facebook</a></li>
+                            <li class="nav-item"><a href="" class="nav-link text-light">Twitter</a></li>
+                            <li class="nav-item"><a href="" class="nav-link text-light">Instagram</a></li>
+                        </ul>
+                        </div>
+                        <div class="col-lg-4">
+                        <p class="text-center fw-bolder">ADDRESS</p>
+                        <address class="text-center">
+                            visit us at :<br>
+                            <i>
+                                6017 Fannin Drive <br>
+                                Arlington, TX 76001
+                            </i>
+                        </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            let v = JSON.parse(localStorage.getItem('project'))
+            let curentUser = JSON.parse(localStorage.getItem('currentUser'))
+            let findMe = v.find((val)=> curentUser == val.email)
+
+            if (findMe) {
+                console.log(curentUser);
+            }
+            document.getElementById('userFname').value = findMe.firstName
+            document.getElementById('userLname').value = findMe.lastName
+            document.getElementById('userEmail').value = findMe.email
+            document.getElementById('userPassword').value = '********'
+            document.getElementById('userPhone').value = findMe.mobile
+            document.getElementById('userDob').value = findMe.dob
+            document.getElementById('userStreet').value = findMe.street
+            document.getElementById('userCity').value = findMe.city
+            document.getElementById('userState').value = findMe.state
+            document.getElementById('userCountry').value = findMe.country
+
+            console.log(v[0].firstName);
+        </script>
+        
+    </body>
+</html>
