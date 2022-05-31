@@ -120,14 +120,10 @@ function sub(event)
 
     // to check existing user
     findMe = newUser.find((val)=>val.email == eachUser.email || val.mobile == eachUser.mobile)
-    if (findMe) 
-    {
-        alert("User already Exist")
-        console.log(eachUser);
-    }
+   
 
     // firstname validation
-    if (eachUser.firstName == '') {
+   if (eachUser.firstName == '') {
         document.getElementById('fname').innerHTML = 'First Name cannont be empty!'
         return false;
         
@@ -210,8 +206,12 @@ function sub(event)
         return false;
     }
     // if all conditions are met, save details in local stoorage
-
-    else if (eachUser.firstName&&eachUser.lastName&&eachUser.email&&eachUser.mobile&&eachUser.password&&eachUser.street&&eachUser.city&&eachUser.state&&eachUser.country&&eachUser.dob !=='') 
+    if (findMe) 
+    {
+        document.getElementById('fname').innerHTML = 'User Already exist!'
+        return false
+    }
+    else  (eachUser.firstName&&eachUser.lastName&&eachUser.email&&eachUser.mobile&&eachUser.password&&eachUser.street&&eachUser.city&&eachUser.state&&eachUser.country&&eachUser.dob !=='') 
     {
         newUser.push(eachUser)
         localStorage.setItem("project", JSON.stringify(newUser))
