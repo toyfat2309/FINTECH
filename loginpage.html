@@ -15,6 +15,19 @@
         <!-- external js file -->
         <script src="login.js"></script>
 
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #vh{
+                height: 100vh;
+            }
+            /* #footer{
+                margin-top: 20vh;
+            } */
+        </style>
+
         <title>Login Page</title>
     </head>
     <body>
@@ -34,7 +47,7 @@
             </div>
             </div>
         </nav>
-        <section>
+        <section id="vh">
             <div class="container-fluid pb-5 pt-5" style="background-color: aliceblue;">
                 <div class="container justify-content-center align-items-center">
                     <div class="row">
@@ -77,9 +90,10 @@
                     </div>
                 </div>
             </div>
+            
         </section>
-        <footer>
-            <div class="container-fluid text-light bg-dark" id="footer">
+        <footer class="container-fluid footer">
+            <div class="container-fluid text-light bg-dark mt-md-auto" id="footer">
                 <div class="container pt-5 pb-5">
                     <div class="row">
                         <div class="col-md-4">
@@ -114,5 +128,6 @@
                 </div>
             </div>
         </footer>
+        
     </body>
 </html>

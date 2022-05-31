@@ -42,7 +42,7 @@
     </nav>
 
     <section>
-        <div class="container-fluid">
+        <div class="container-fluid" id="hero">
             <div class="row" >
                 <div class="col-xxl-2 d-none d-xxl-block pt-3 border" style="background-color:darkgray;">
                     <p><span class="text-light" style="font-size: 18px; padding-left: .5vw;">Welcome <span id="name"></span></span></p>
@@ -187,8 +187,15 @@
                                     
                                 </div>
                             </div>
-                            <div class="col-md-6 table-responsive mt-0 border " id="lakes">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores totam accusamus nulla consequuntur, quia fugiat sequi? Quos inventore sequi ad nesciunt quis, corrupti unde autem numquam itaque dolore dicta quo.
+                            <div class="col-md-6 table-responsive mt-0 border " >
+                                <table class="table">
+                                    <thead>
+                                        <th>S/N</th><th>NAME</th><th>ACCOUNT NO</th><th>AMOUNT</th><th>DATE</th><th>TIME</th>
+                                    </thead>
+                                    <tbody id="lakes">
+
+                                    </tbody>
+                                </table>
                             </div>
                             <!-- <div class="col-sm-6">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id excepturi totam, dolore beatae quod nisi facere neque, repellendus esse assumenda aliquam? Doloremque magni adipisci deleniti dolorum beatae ab! Esse, temporibus.
@@ -292,25 +299,6 @@
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
-    </script>
-    <script>
-        function openNav() {
-          document.getElementById("mySidenav").style.display = "block";
-        }
-        
-        function closeNav() {
-          document.getElementById("mySidenav").style.display = "none";
-        }
-        let myCanvas = document.getElementById('myChart')
-        let config = 
-        {type : 'line',
-         data :{
-             labels:['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'],
-             datasets:[{label:'monthly income n expenses', data:[0.5,0.2,0.7,0.4,1.0]}]
-         },
-        };
-
-        let myChart = new Chart(myCanvas, config)
     </script>
 </body>
 </html>

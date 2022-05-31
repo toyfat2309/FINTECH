@@ -104,3 +104,10 @@ ul li ul li{
 ul li:hover ul li{
  display: block;
 }
+#no{
+  color: red;
+  font-size: x-large;
+}
+#hero{
+  height: fit-content;
+}

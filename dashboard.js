@@ -21,33 +21,45 @@ dashboard = () =>{
 
 // table for transaction history 
        
-           tee = '<table class="table"><thead>'
-           tee +='<th>S/N</th><th>NAME</th><th>ACCOUNT NO</th><th>AMOUNT</th><th>DATE</th><th>TIME</th>'
-           tee +='<tbody>'
-       for (i =0; i< findMe.transactions.length; i++) 
-       {
-           if (i==3) {
-               break;
-           }
-                let SN = i+1
-            if (findMe.transactions[i].color == 'red') {
-                tee += `<tr><td>${SN}</td>`
-                tee += `<td>${findMe.transactions[i].recipient}</td>`
-                tee += `<td>${findMe.transactions[i].accNo}</td>`
-                tee += `<td class="text-danger">${findMe.transactions[i].amountSend}</td>`
-                tee += `<td>${findMe.transactions[i].asiko}</td>`
-                tee += `<td>${findMe.transactions[i].ojo}</td>`
+        // tee = '<table class="table"><thead>'
+        // tee +='<th>S/N</th><th>NAME</th><th>ACCOUNT NO</th><th>AMOUNT</th><th>DATE</th><th>TIME</th>'
+        // tee +='<tbody id="lakes">'
+        tee = ''
+
+       if (findMe.transactions.length==0) {
+           tee += '<tr><td colspan="6"><p id="no">No transaction has taken place, please transfer to view history</p></td></tr>'
+        document.getElementById('lakes').innerHTML = tee
+        console.log(findMe.transactions.length);
+       }
+       else{
+            
+
+        for (i =0; i< findMe.transactions.length; i++) 
+        {
+            if (i==3) {
+                break;
             }
-                else {
-                    tee += `<tr><td>${SN}</td>`
-                    tee += `<td>${findMe.transactions[i].sender}</td>`
-                    tee += `<td>${findMe.transactions[i].accNo}</td>`
-                    tee +=`<td class="text-success">${findMe.transactions[i].amountRecieved}</td>`
-                    tee += `<td>${findMe.transactions[i].asiko}</td>`
-                    tee += `<td>${findMe.transactions[i].ojo}</td>`
-                }
-        }
-      document.getElementById('lakes').innerHTML = tee
+                 let SN = i+1
+             if (findMe.transactions[i].color == 'red') {
+                 tee += `<tr><td>${SN}</td>`
+                 tee += `<td>${findMe.transactions[i].recipient}</td>`
+                 tee += `<td>${findMe.transactions[i].accNo}</td>`
+                 tee += `<td class="text-danger">${findMe.transactions[i].amountSend}</td>`
+                 tee += `<td>${findMe.transactions[i].asiko}</td>`
+                 tee += `<td>${findMe.transactions[i].ojo}</td>`
+             }
+                 else {
+                     tee += `<tr><td>${SN}</td>`
+                     tee += `<td>${findMe.transactions[i].sender}</td>`
+                     tee += `<td>${findMe.transactions[i].accNo}</td>`
+                     tee +=`<td class="text-success">${findMe.transactions[i].amountRecieved}</td>`
+                     tee += `<td>${findMe.transactions[i].asiko}</td>`
+                     tee += `<td>${findMe.transactions[i].ojo}</td>`
+                 }
+         }
+         document.getElementById('lakes').innerHTML = tee
+       }
+      
    }
 
 // displaying of inflow , outflow and total
@@ -83,6 +95,25 @@ dashboard = () =>{
    let expenses = document.getElementById('outflow').innerHTML
    let total = eval(income+expenses).toFixed(2)
    document.getElementById('netTotal').innerHTML = total
+
+
+   function openNav() {
+    document.getElementById("mySidenav").style.display = "block";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.display = "none";
+  }
+  let myCanvas = document.getElementById('myChart')
+  let config = 
+  {type : 'line',
+   data :{
+       labels:['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'],
+       datasets:[{label:'monthly income n expenses', data:[0.5,0.2,0.7,0.4,1.0]}]
+   },
+  };
+
+  let myChart = new Chart(myCanvas, config)
 }
 
 
