@@ -37,7 +37,7 @@ createPin = () => {
            userInfo.pin = p1
            localStorage.setItem('project', JSON.stringify(bigStorage))
            alert('pin create successfully')
-           location.href = ('transaferpage.html')
+           location.href = ('transferpage.html')
         }
         else {
             alert('value entered doesnt matched')
